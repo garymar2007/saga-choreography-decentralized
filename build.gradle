@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    if (!tasks.names.contains("prepareKotlinBuildScriptModel")) {
+        tasks.register("prepareKotlinBuildScriptModel")
+    }
+}
+
+
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+}

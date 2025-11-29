@@ -1,0 +1,2 @@
+rootProject.name = "movie-booking-system-decentralized"
+include(":movie-booking-commons", ":booking-service")
