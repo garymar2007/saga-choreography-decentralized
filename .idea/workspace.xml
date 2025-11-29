@@ -5,16 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef0937d-8d10-457d-abaf-965e9195e3ee" name="Changes" comment="Finished BookingService.">
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/MovieBookingListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/controller/BookingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/entity/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/messaging/BookingEventProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/repository/BookingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/service/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/utils/BookingRequestToEntityMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/gary/bookingservice/utils/EntityToBookingResponseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/config/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/entity/SeatInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/listener/PaymentStatusListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/listener/SeatInventoryListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/messaging/SeatReserveProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/repository/SeatInventoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/service/SeatInventoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/utils/SeatStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-booking-commons/src/main/java/com/gary/response/BookingRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-booking-commons/src/main/java/com/gary/response/BookingResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +34,9 @@
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/booking-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/seat-inventory-service">
       <ProjectState />
     </projectState>
   </component>
@@ -44,6 +55,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -75,6 +87,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.Download Sources.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -82,6 +95,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -131,6 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SeatInventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="movie-booking-system-decentralized.seat-inventory-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gary.seatinventoryservice.SeatInventoryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.saga-choreography-decentralized" />
@@ -154,7 +175,7 @@
       <updated>1764190541592</updated>
       <workItem from="1764190542810" duration="1541000" />
       <workItem from="1764223223080" duration="15000" />
-      <workItem from="1764419367112" duration="7319000" />
+      <workItem from="1764419367112" duration="11998000" />
     </task>
     <task id="LOCAL-00001" summary="Added readme and the architecture image.">
       <option name="closed" value="true" />
@@ -164,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764422831375</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finished BookingService.">
+      <option name="closed" value="true" />
+      <created>1764426918968</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764426918968</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
