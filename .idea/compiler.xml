@@ -9,6 +9,7 @@
         </processorPath>
         <module name="movie-booking-system-decentralized.booking-service.main" />
         <module name="movie-booking-system-decentralized.seat-inventory-service.main" />
+        <module name="movie-booking-system-decentralized.payment-service.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
@@ -21,9 +22,15 @@
       <module name="movie-booking-system-decentralized.booking-service" options="-parameters" />
       <module name="movie-booking-system-decentralized.booking-service.main" options="-parameters" />
       <module name="movie-booking-system-decentralized.booking-service.test" options="-parameters" />
+      <module name="movie-booking-system-decentralized.payment-service" options="-parameters" />
+      <module name="movie-booking-system-decentralized.payment-service.main" options="-parameters" />
+      <module name="movie-booking-system-decentralized.payment-service.test" options="-parameters" />
       <module name="movie-booking-system-decentralized.seat-inventory-service" options="-parameters" />
       <module name="movie-booking-system-decentralized.seat-inventory-service.main" options="-parameters" />
       <module name="movie-booking-system-decentralized.seat-inventory-service.test" options="-parameters" />
+      <module name="payment-service" options="-parameters" />
+      <module name="payment-service.main" options="-parameters" />
+      <module name="payment-service.test" options="-parameters" />
       <module name="seat-inventory-service" options="-parameters" />
       <module name="seat-inventory-service.main" options="-parameters" />
       <module name="seat-inventory-service.test" options="-parameters" />

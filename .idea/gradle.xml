@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/booking-service" />
             <option value="$PROJECT_DIR$/movie-booking-commons" />
+            <option value="$PROJECT_DIR$/payment-service" />
             <option value="$PROJECT_DIR$/seat-inventory-service" />
           </set>
         </option>
@@ -22,6 +23,19 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/booking-service" />
             <option value="$PROJECT_DIR$/movie-booking-commons" />
+            <option value="$PROJECT_DIR$/payment-service" />
+            <option value="$PROJECT_DIR$/seat-inventory-service" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/booking-service" />
+            <option value="$PROJECT_DIR$/movie-booking-commons" />
+            <option value="$PROJECT_DIR$/payment-service" />
             <option value="$PROJECT_DIR$/seat-inventory-service" />
           </set>
         </option>
@@ -33,6 +47,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/booking-service" />
             <option value="$PROJECT_DIR$/movie-booking-commons" />
+            <option value="$PROJECT_DIR$/payment-service" />
             <option value="$PROJECT_DIR$/seat-inventory-service" />
           </set>
         </option>

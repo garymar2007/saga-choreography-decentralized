@@ -1,2 +1,2 @@
 rootProject.name = "movie-booking-system-decentralized"
-include(":movie-booking-commons", ":booking-service", ":seat-inventory-service")
+include(":movie-booking-commons", ":booking-service", ":seat-inventory-service", ":payment-service")

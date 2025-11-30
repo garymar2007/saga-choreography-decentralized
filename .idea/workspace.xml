@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef0937d-8d10-457d-abaf-965e9195e3ee" name="Changes" comment="Finished BookingService.">
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/config/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/entity/SeatInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/listener/PaymentStatusListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/listener/SeatInventoryListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/messaging/SeatReserveProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/repository/SeatInventoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/service/SeatInventoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/java/com/gary/seatinventoryservice/utils/SeatStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seat-inventory-service/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="6ef0937d-8d10-457d-abaf-965e9195e3ee" name="Changes" comment="Finished Payment Service.">
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/gary/paymentservice/exception/PaymentServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/gary/paymentservice/listener/SeatReserveEventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/gary/paymentservice/message/PaymentEventProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/gary/paymentservice/service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
@@ -34,6 +28,9 @@
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/booking-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/payment-service">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/seat-inventory-service">
@@ -63,19 +60,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "garymar2007"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;garymar2007&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/garymar2007/saga-choreography-decentralized.git",
-    "accountId": "26427f7a-5995-46c4-b79d-d21fbcf1e1a8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/garymar2007/saga-choreography-decentralized.git&quot;,
+    &quot;accountId&quot;: &quot;26427f7a-5995-46c4-b79d-d21fbcf1e1a8&quot;
   }
-}]]></component>
+}</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.14-bin/38aieal9i53h9rfe7vjup95b9/gradle-8.14" javaHome="$USER_HOME$/.sdkman/candidates/java/17.0.3.6.1-amzn" gradleVersion="8.14" />
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -84,32 +88,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Download Sources.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/garyma/garymar2007/saga-choreography-decentralized/movie-booking-commons/src/main/java/com/gary/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3045977",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/garyma/garymar2007/saga-choreography-decentralized/movie-booking-commons/src/main/java/com/gary/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3045977&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gary.paymentservice.exception" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Gradle.saga-choreography-decentralized">
     <configuration name="saga-choreography-decentralized" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -145,6 +165,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaymentServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="movie-booking-system-decentralized.payment-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gary.paymentservice.PaymentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="movie-booking-system-decentralized.payment-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gary.paymentservice.PaymentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SeatInventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="movie-booking-system-decentralized.seat-inventory-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.gary.seatinventoryservice.SeatInventoryServiceApplication" />
@@ -175,7 +209,8 @@
       <updated>1764190541592</updated>
       <workItem from="1764190542810" duration="1541000" />
       <workItem from="1764223223080" duration="15000" />
-      <workItem from="1764419367112" duration="11998000" />
+      <workItem from="1764419367112" duration="15672000" />
+      <workItem from="1764526087121" duration="1862000" />
     </task>
     <task id="LOCAL-00001" summary="Added readme and the architecture image.">
       <option name="closed" value="true" />
@@ -193,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764426918968</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Finished Seat Inventory Service.">
+      <option name="closed" value="true" />
+      <created>1764442940548</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764442940548</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +245,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added readme and the architecture image." />
     <MESSAGE value="Finished BookingService." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished BookingService." />
+    <MESSAGE value="Finished Seat Inventory Service." />
+    <MESSAGE value="Finished Payment Service." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Payment Service." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
