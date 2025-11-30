@@ -25,8 +25,33 @@ public class SeatInventoryService {
         this.seatReserveProducer = seatReserveProducer;
     }
 
-    public void handleBooking(BookingCreatedEvent bookingCreatedEvent) {
-        log.info("SeatInventoryService ::  Processing bookingCreated for bookingId {}", bookingCreatedEvent.bookingId());
+    public void handleBooking(BookingCreatedEvent event) {
+        log.info("SeatInventoryService ::  Processing bookingCreated for bookingId {}", event.bookingId());
+        // Fetch seat inventories for the given show and seat numbers
+        List<SeatInventory> seats = seatInventoryRepository
+                .findByShowIdAndSeatNumberIn(event.showId(), event.seatIds());
+
+        // Check if all seats are available
+        boolean allAvailable = seats.stream()
+                .allMatch(s -> s.getStatus() == SeatStatus.AVAILABLE);
+
+        if (allAvailable) {
+            // Update seat status to LOCKED and set current booking ID
+            seats.forEach(s -> {
+                s.setStatus(SeatStatus.LOCKED);
+                s.setCurrentBookingId(event.bookingId());
+            });
+            seatInventoryRepository.saveAll(seats);
+            // Publish seat reserved event
+            seatReserveProducer
+                    .publishSeatReserveEvent(new SeatReservedEvent(event.bookingId(), true, event.amount()));
+            log.info("SeatInventoryService:: Seats locked successfully for bookingId {}", event.bookingId());
+        }else{
+            log.warn("SeatInventoryService:: Seat locking failed for bookingId {}. Some seats are not available.", event.bookingId());
+            // Publish seat reserved event with failure
+            seatReserveProducer
+                    .publishSeatReserveEvent(new SeatReservedEvent(event.bookingId(), false, event.amount()));
+        }
     }
 
     public void releaseSeatsOnPaymentFailure(final String bookingId) {

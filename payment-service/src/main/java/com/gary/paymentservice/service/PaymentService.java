@@ -32,7 +32,7 @@ public class PaymentService {
                 kafkaTemplate.send(event.bookingId(),
                         new BookingPaymentEvent(event.bookingId(), true, event.amount()));
                 eventProducer.publishPaymentSuccessEvent(event);
-                log.info("Payment completed for bookingId: {}", event.bookingId());
+                log.info("✅ Payment completed for bookingId: {}", event.bookingId());
             }
         } catch (Exception ex) {
             log.error("❌ Payment failed for bookingId: {}. Reason: {}", event.bookingId(), ex.getMessage());
